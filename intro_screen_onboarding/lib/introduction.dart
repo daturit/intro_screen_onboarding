@@ -40,8 +40,11 @@ class IntroductionState extends State<Introduction> {
                   widget.title,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.clip,
-                  style:
-                  TextStyle(color: Colors.black, fontSize: 30.0, height: 1.5, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30.0,
+                      height: 1.5,
+                      fontWeight: FontWeight.w600),
                 ),
               ],
             ),
@@ -51,7 +54,7 @@ class IntroductionState extends State<Introduction> {
             Text(
               widget.subTitle,
               style:
-              TextStyle(color: Colors.black, fontSize: 22.0, height: 1.5),
+                  TextStyle(color: Colors.black, fontSize: 22.0, height: 1.5),
               overflow: TextOverflow.clip,
               textAlign: TextAlign.center,
             ),

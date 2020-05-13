@@ -11,17 +11,18 @@ import 'introduction.dart';
 
 class IntroScreenOnboarding extends StatefulWidget {
   final List<Introduction> introductionList;
+
   /// Callback on Skip Button Pressed
   final Function onTapSkipButton;
 
-  IntroScreenOnboarding({Key key, this.introductionList, this.onTapSkipButton}): super(key: key);
+  IntroScreenOnboarding({Key key, this.introductionList, this.onTapSkipButton})
+      : super(key: key);
 
   @override
   _IntroScreenOnboardingState createState() => _IntroScreenOnboardingState();
 }
 
 class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
-
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
   double progressPercent = 0;
@@ -183,11 +184,12 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           ),
           child: IconButton(
             onPressed: () {
-              _currentPage != widget.introductionList.length - 1 ?
-              _pageController.nextPage(
-                duration: Duration(milliseconds: 500),
-                curve: Curves.ease,
-              ) : widget.onTapSkipButton();
+              _currentPage != widget.introductionList.length - 1
+                  ? _pageController.nextPage(
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.ease,
+                    )
+                  : widget.onTapSkipButton();
             },
             icon: Icon(
               Icons.arrow_forward_ios,
