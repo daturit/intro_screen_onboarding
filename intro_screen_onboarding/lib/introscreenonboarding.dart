@@ -140,18 +140,18 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
 //    ));
 //  }
 
-  Widget _indicator(bool isActive) {
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 150),
-      margin: EdgeInsets.symmetric(horizontal: 8.0),
-      height: 8.0,
-      width: isActive ? 24 : 16,
-      decoration: BoxDecoration(
-        color: isActive ? Color(0xFF7B51D3) : Colors.grey,
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-      ),
-    );
-  }
+//  Widget _indicator(bool isActive) {
+//    return AnimatedContainer(
+//      duration: Duration(milliseconds: 150),
+//      margin: EdgeInsets.symmetric(horizontal: 8.0),
+//      height: 8.0,
+//      width: isActive ? 24 : 16,
+//      decoration: BoxDecoration(
+//        color: isActive ? Color(0xFF7B51D3) : Colors.grey,
+//        borderRadius: BorderRadius.all(Radius.circular(10)),
+//      ),
+//    );
+//  }
 
 //  List<Widget> _buildPageIndicator() {
 //    List<Widget> list = [];

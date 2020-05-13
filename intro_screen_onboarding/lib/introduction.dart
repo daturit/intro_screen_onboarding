@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Introduction extends StatefulWidget {
-  String imageUrl;
-  String title;
-  String subTitle;
+  final String imageUrl;
+  final String title;
+  final String subTitle;
 
   Introduction({this.imageUrl, this.title, this.subTitle});
 
