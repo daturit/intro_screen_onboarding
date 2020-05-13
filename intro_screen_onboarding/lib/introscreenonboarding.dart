@@ -3,18 +3,18 @@ library introscreenonboarding;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:introscreenonboarding/Introduction.dart';
 
 import 'circle_progress_bar.dart';
+import 'introduction.dart';
 
 /// A IntroScreen Class.
 
 class IntroScreenOnboarding extends StatefulWidget {
   final List<Introduction> introductionList;
   /// Callback on Skip Button Pressed
-  final VoidCallback onTapSkipButton;
+  final Function onTapSkipButton;
 
-  IntroScreenOnboarding({this.introductionList, this.onTapSkipButton});
+  IntroScreenOnboarding({Key key, this.introductionList, this.onTapSkipButton}): super(key: key);
 
   @override
   _IntroScreenOnboardingState createState() => _IntroScreenOnboardingState();
@@ -47,8 +47,8 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
                       alignment: Alignment.topRight,
                       child: FlatButton(
                         onPressed: () {
-                          print('skip');
-                          widget.onTapSkipButton;
+                          //print('skip');
+                          widget.onTapSkipButton();
                         },
                         child: Text(
                           'Skip',
@@ -87,58 +87,58 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
     );
   }
 
-  Widget _buildNextButton() {
-    return (_currentPage != widget.introductionList.length - 1
-        ? Expanded(
-      child: Align(
-        alignment: FractionalOffset.bottomRight,
-        child: FlatButton(
-          onPressed: () {
-            _pageController.nextPage(
-              duration: Duration(milliseconds: 500),
-              curve: Curves.ease,
-            );
-          },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-//                    Text(
-//                      'Next',
-//                      style: TextStyle(
-//                        color: Colors.black,
-//                        fontSize: 22.0,
-//                      ),
-//                    ),
-            ],
-          ),
-        ),
-      ),
-    )
-        : Expanded(
-      child: Align(
-        alignment: FractionalOffset.bottomRight,
-        child: FlatButton(
-          onPressed: () {
-            print('Start');
-          },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-//                    Text(
-//                      'Start',
-//                      style: TextStyle(
-//                        color: Colors.black,
-//                        fontSize: 22.0,
-//                      ),
-//                    ),
-            ],
-          ),
-        ),
-      ),
-    ));
-  }
+//  Widget _buildNextButton() {
+//    return (_currentPage != widget.introductionList.length - 1
+//        ? Expanded(
+//      child: Align(
+//        alignment: FractionalOffset.bottomRight,
+//        child: FlatButton(
+//          onPressed: () {
+//            _pageController.nextPage(
+//              duration: Duration(milliseconds: 500),
+//              curve: Curves.ease,
+//            );
+//          },
+//          child: Row(
+//            mainAxisAlignment: MainAxisAlignment.center,
+//            mainAxisSize: MainAxisSize.min,
+//            children: <Widget>[
+////                    Text(
+////                      'Next',
+////                      style: TextStyle(
+////                        color: Colors.black,
+////                        fontSize: 22.0,
+////                      ),
+////                    ),
+//            ],
+//          ),
+//        ),
+//      ),
+//    )
+//        : Expanded(
+//      child: Align(
+//        alignment: FractionalOffset.bottomRight,
+//        child: FlatButton(
+//          onPressed: () {
+//            print('Start');
+//          },
+//          child: Row(
+//            mainAxisAlignment: MainAxisAlignment.center,
+//            mainAxisSize: MainAxisSize.min,
+//            children: <Widget>[
+////                    Text(
+////                      'Start',
+////                      style: TextStyle(
+////                        color: Colors.black,
+////                        fontSize: 22.0,
+////                      ),
+////                    ),
+//            ],
+//          ),
+//        ),
+//      ),
+//    ));
+//  }
 
   Widget _indicator(bool isActive) {
     return AnimatedContainer(
@@ -153,13 +153,13 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
     );
   }
 
-  List<Widget> _buildPageIndicator() {
-    List<Widget> list = [];
-    for (int i = 0; i < widget.introductionList.length; i++) {
-      list.add(i == _currentPage ? _indicator(true) : _indicator(false));
-    }
-    return list;
-  }
+//  List<Widget> _buildPageIndicator() {
+//    List<Widget> list = [];
+//    for (int i = 0; i < widget.introductionList.length; i++) {
+//      list.add(i == _currentPage ? _indicator(true) : _indicator(false));
+//    }
+//    return list;
+//  }
 
   Widget _customProgress() {
     return Stack(
@@ -187,8 +187,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
               _pageController.nextPage(
                 duration: Duration(milliseconds: 500),
                 curve: Curves.ease,
-                // ignore: unnecessary_statements
-              ) : widget.onTapSkipButton;
+              ) : widget.onTapSkipButton();
             },
             icon: Icon(
               Icons.arrow_forward_ios,
