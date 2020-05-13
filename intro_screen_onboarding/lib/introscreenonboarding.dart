@@ -1,4 +1,4 @@
-library introscreenonboarding;
+library intro_screen_onboarding_flutter;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

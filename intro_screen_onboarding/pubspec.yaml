@@ -1,6 +1,6 @@
-name: introscreenonboarding
+name: intro_screen_onboarding_flutter
 description: Flutter Intro Screen Onboarding is a flutter plugin that helps you make a cool intro for your app. Create intro has never been easier and faster
-version: 0.0.5
+version: 0.1.1
 homepage: https://github.com/daturit/intro_screen_onboarding
 
 environment:
