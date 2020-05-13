@@ -1,4 +1,10 @@
 
+## [0.1.3]
+** Add image and gif.
+
+## [0.1.2]
+** Add image and gif.
+
 ## [0.1.1]
 ** Change name package.
 

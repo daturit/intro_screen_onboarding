@@ -3,12 +3,10 @@
 Flutter Intro Screen Onboarding is a flutter plugin that helps you make a cool intro for your app. Create intro has never been easier and faster
 
 
-<p>
-<img src="https://github.com/daturit/intro_screen_onboarding/blob/master/intro_screen_onboarding/intro1.png" alt="drawing" width="230px" hspace="5"/>
-<img src="https://github.com/daturit/intro_screen_onboarding/blob/master/intro_screen_onboarding/intro2.png" alt="drawing" width="230px"  />
-<img src="https://github.com/daturit/intro_screen_onboarding/blob/master/intro_screen_onboarding/intro3.png" alt="drawing" width="230px"  />
-<img src="https://github.com/daturit/intro_screen_onboarding/blob/master/intro_screen_onboarding/intro4.png" alt="drawing" width="230px"  />
-</p>
+<img src = "https://github.com/daturit/intro_screen_onboarding/blob/master/intro_screen_onboarding/intro1.png?raw=true" align = "right" height = "350px"/>
+
+## Animation
+<img src="https://media.giphy.com/media/URpaxOK8hPxd6LLfWh/giphy.gif?raw=true" align = "right" height = "550px">
 
 ## Getting Started
 
