@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:introscreenonboarding/introduction.dart';
-import 'package:introscreenonboarding/introscreenonboarding.dart';
+import 'package:introscreenonboarding/intro_app.dart';
 
 import 'home_page.dart';
 

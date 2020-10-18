@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1e358727-9d24-4aee-b390-62f4a0a462a8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/intro_screen_onboarding/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/intro_screen_onboarding/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro_screen_onboarding/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/intro_screen_onboarding/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro_screen_onboarding/example/lib/intro_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/intro_screen_onboarding/example/lib/intro_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro_screen_onboarding/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/intro_screen_onboarding/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro_screen_onboarding/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/intro_screen_onboarding/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fTe6lyDJ86ZI8CPC7MP4BSNn11" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1e358727-9d24-4aee-b390-62f4a0a462a8" name="Default Changelist" comment="" />
+      <created>1596246336293</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596246336293</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
