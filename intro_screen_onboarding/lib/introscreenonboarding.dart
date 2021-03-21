@@ -176,7 +176,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           height: 80,
           child: CircleProgressBar(
             backgroundColor: Colors.white,
-            foregroundColor: widget.circleProgressBarColor,
+            foregroundColor: widget.circleProgressBorderColor,
             value: ((_currentPage + 1) * 1.0 / widget.introductionList.length),
           ),
         ),
@@ -185,7 +185,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           width: 55,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: widget.circleProgressBorderColor,
+            color: widget.circleProgressBarColor,
           ),
           child: IconButton(
             onPressed: () {
