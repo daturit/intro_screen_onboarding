@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,11 +9,18 @@ import 'introduction.dart';
 
 class IntroScreenOnboarding extends StatefulWidget {
   final List<Introduction> introductionList;
+  final Color circleProgressBarColor;
+  final Color circleProgressBorderColor;
 
   /// Callback on Skip Button Pressed
   final Function onTapSkipButton;
 
-  IntroScreenOnboarding({Key key, this.introductionList, this.onTapSkipButton})
+  IntroScreenOnboarding(
+      {Key key,
+      this.introductionList,
+      this.onTapSkipButton,
+      this.circleProgressBarColor = Colors.deepPurple,
+      this.circleProgressBorderColor = Colors.deepPurple})
       : super(key: key);
 
   @override
@@ -171,7 +176,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           height: 80,
           child: CircleProgressBar(
             backgroundColor: Colors.white,
-            foregroundColor: Color(0xFF7B51D3),
+            foregroundColor: widget.circleProgressBarColor,
             value: ((_currentPage + 1) * 1.0 / widget.introductionList.length),
           ),
         ),
@@ -180,7 +185,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           width: 55,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Color(0xFF7B51D3),
+            color: widget.circleProgressBorderColor,
           ),
           child: IconButton(
             onPressed: () {
