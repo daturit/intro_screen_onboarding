@@ -1,12 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Introduction extends StatefulWidget {
   final String imageUrl;
   final String title;
   final String subTitle;
+  final TextStyle titleTextStyle;
+  final TextStyle subTitleTextStyle;
 
-  Introduction({this.imageUrl, this.title, this.subTitle});
+  Introduction({
+    required this.imageUrl,
+    required this.title,
+    required this.subTitle,
+    this.titleTextStyle = const TextStyle(fontSize: 30),
+    this.subTitleTextStyle = const TextStyle(fontSize: 20),
+  });
 
   @override
   State<StatefulWidget> createState() {
@@ -40,11 +47,7 @@ class IntroductionState extends State<Introduction> {
                   widget.title,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.clip,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30.0,
-                      height: 1.5,
-                      fontWeight: FontWeight.w600),
+                  style: widget.titleTextStyle,
                 ),
               ],
             ),
@@ -53,8 +56,7 @@ class IntroductionState extends State<Introduction> {
             ),
             Text(
               widget.subTitle,
-              style:
-                  TextStyle(color: Colors.black, fontSize: 22.0, height: 1.5),
+              style: widget.subTitleTextStyle,
               overflow: TextOverflow.clip,
               textAlign: TextAlign.center,
             ),
