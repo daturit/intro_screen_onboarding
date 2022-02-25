@@ -4,6 +4,8 @@ class Introduction extends StatefulWidget {
   final String imageUrl;
   final String title;
   final String subTitle;
+  final double? imageWidth;
+  final double? imageHeight;
   final TextStyle titleTextStyle;
   final TextStyle subTitleTextStyle;
 
@@ -13,6 +15,8 @@ class Introduction extends StatefulWidget {
     required this.subTitle,
     this.titleTextStyle = const TextStyle(fontSize: 30),
     this.subTitleTextStyle = const TextStyle(fontSize: 20),
+    this.imageWidth = 360,
+    this.imageHeight = 360,
   });
 
   @override
@@ -33,8 +37,8 @@ class IntroductionState extends State<Introduction> {
             Center(
               child: Image(
                 image: AssetImage(widget.imageUrl),
-                height: 360.0,
-                width: 360.0,
+                height: widget.imageHeight,
+                width: widget.imageWidth,
               ),
             ),
             SizedBox(
