@@ -32,7 +32,8 @@ class IntroductionState extends State<Introduction> {
       child: Padding(
         padding: EdgeInsets.all(40),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
               child: Image(
