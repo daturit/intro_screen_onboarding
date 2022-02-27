@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:introscreenonboarding/intro_app.dart';
+import 'package:intro_screen_onboarding_flutter/intro_app.dart';
 
 import 'home_page.dart';
 
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        // backgroundColor: Color.fromARGB(255, 36, 34, 34),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: TestScreen(),
@@ -58,6 +59,7 @@ class TestScreen extends StatelessWidget {
           ), //MaterialPageRoute
         );
       },
+      // foregroundColor: Colors.red,
     );
   }
 }

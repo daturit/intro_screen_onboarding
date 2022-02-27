@@ -1,12 +1,23 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Introduction extends StatefulWidget {
   final String imageUrl;
   final String title;
   final String subTitle;
+  final double? imageWidth;
+  final double? imageHeight;
+  final TextStyle titleTextStyle;
+  final TextStyle subTitleTextStyle;
 
-  Introduction({this.imageUrl, this.title, this.subTitle});
+  Introduction({
+    required this.imageUrl,
+    required this.title,
+    required this.subTitle,
+    this.titleTextStyle = const TextStyle(fontSize: 30),
+    this.subTitleTextStyle = const TextStyle(fontSize: 20),
+    this.imageWidth = 360,
+    this.imageHeight = 360,
+  });
 
   @override
   State<StatefulWidget> createState() {
@@ -21,13 +32,14 @@ class IntroductionState extends State<Introduction> {
       child: Padding(
         padding: EdgeInsets.all(40),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
               child: Image(
                 image: AssetImage(widget.imageUrl),
-                height: 360.0,
-                width: 360.0,
+                height: widget.imageHeight,
+                width: widget.imageWidth,
               ),
             ),
             SizedBox(
@@ -40,11 +52,7 @@ class IntroductionState extends State<Introduction> {
                   widget.title,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.clip,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30.0,
-                      height: 1.5,
-                      fontWeight: FontWeight.w600),
+                  style: widget.titleTextStyle,
                 ),
               ],
             ),
@@ -53,8 +61,7 @@ class IntroductionState extends State<Introduction> {
             ),
             Text(
               widget.subTitle,
-              style:
-                  TextStyle(color: Colors.black, fontSize: 22.0, height: 1.5),
+              style: widget.subTitleTextStyle,
               overflow: TextOverflow.clip,
               textAlign: TextAlign.center,
             ),

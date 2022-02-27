@@ -1,6 +1,3 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,13 +7,21 @@ import 'introduction.dart';
 /// A IntroScreen Class.
 
 class IntroScreenOnboarding extends StatefulWidget {
-  final List<Introduction> introductionList;
+  final List<Introduction>? introductionList;
+  final Color? backgroudColor;
+  final Color? foregroundColor;
+  final TextStyle? skipTextStyle;
 
   /// Callback on Skip Button Pressed
-  final Function onTapSkipButton;
-
-  IntroScreenOnboarding({Key key, this.introductionList, this.onTapSkipButton})
-      : super(key: key);
+  final Function()? onTapSkipButton;
+  IntroScreenOnboarding({
+    Key? key,
+    this.introductionList,
+    this.onTapSkipButton,
+    this.backgroudColor,
+    this.foregroundColor,
+    this.skipTextStyle = const TextStyle(fontSize: 20),
+  }) : super(key: key);
 
   @override
   _IntroScreenOnboardingState createState() => _IntroScreenOnboardingState();
@@ -29,13 +34,11 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
+    return Material(
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-          ),
+          color: widget.backgroudColor ?? Theme.of(context).backgroundColor,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 40.0),
             child: Column(
@@ -46,15 +49,9 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
                   children: [
                     Container(
                       alignment: Alignment.topRight,
-                      child: FlatButton(
-                        onPressed: () {
-                          //print('skip');
-                          widget.onTapSkipButton();
-                        },
-                        child: Text(
-                          'Skip',
-                          style: TextStyle(color: Colors.black, fontSize: 20),
-                        ),
+                      child: TextButton(
+                        onPressed: widget.onTapSkipButton,
+                        child: Text('Skip', style: widget.skipTextStyle),
                       ),
                     ),
                   ],
@@ -70,14 +67,14 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
                           _currentPage = page;
                         });
                       },
-                      children: widget.introductionList,
+                      children: widget.introductionList!,
                     ),
                   ),
                 ),
-//                Row(
-//                  mainAxisAlignment: MainAxisAlignment.center,
-//                  children: _buildPageIndicator(),
-//                ),
+                //                Row(
+                //                  mainAxisAlignment: MainAxisAlignment.center,
+                //                  children: _buildPageIndicator(),
+                //                ),
                 _customProgress(),
                 //_buildNextButton(),
               ],
@@ -171,8 +168,9 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           height: 80,
           child: CircleProgressBar(
             backgroundColor: Colors.white,
-            foregroundColor: Color(0xFF7B51D3),
-            value: ((_currentPage + 1) * 1.0 / widget.introductionList.length),
+            foregroundColor:
+                widget.foregroundColor ?? Theme.of(context).primaryColor,
+            value: ((_currentPage + 1) * 1.0 / widget.introductionList!.length),
           ),
         ),
         Container(
@@ -180,16 +178,17 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           width: 55,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Color(0xFF7B51D3),
+            color: (widget.foregroundColor ?? Theme.of(context).primaryColor)
+                .withOpacity(0.5),
           ),
           child: IconButton(
             onPressed: () {
-              _currentPage != widget.introductionList.length - 1
+              _currentPage != widget.introductionList!.length - 1
                   ? _pageController.nextPage(
                       duration: Duration(milliseconds: 500),
                       curve: Curves.ease,
                     )
-                  : widget.onTapSkipButton();
+                  : widget.onTapSkipButton!();
             },
             icon: Icon(
               Icons.arrow_forward_ios,
