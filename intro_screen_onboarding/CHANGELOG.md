@@ -1,4 +1,7 @@
 
+## [1.0.0]
+** Migrate Null Safety.
+
 ## [0.1.5]
 ** Add image and gif.
 
